@@ -2,6 +2,7 @@
 
 #include<SFML/Graphics.hpp>
 #include<vector>
+#include<cmath>
 
 #include"globals.h"
 
@@ -13,19 +14,22 @@ private:
     float pos_y;
     float rotation;
     float speed;
-    sf::CircleShape shape;
-    sf::VertexArray shape_dir;
+    float size;
+    float cos;
+    float sin;
+    sf::RectangleShape shape;
 
 public:
     Player2D();
     Player2D(float _pos_x, float _pos_y, float _rotation);
 
-    void move(float new_x, float new_y);
-    void rotate(float new_rotation);
+    void move(float timdelta);
+    void rotate(float timedelta);
     void set_speed(float new_speed);
 
     sf::Vector2f get_pos();
+    float get_rotation();
 
-    sf::CircleShape get_shape();
+    sf::RectangleShape get_shape();
 
 };
