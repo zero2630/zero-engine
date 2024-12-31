@@ -72,12 +72,12 @@ void Player2D::move(float timedelta)
         pos_y = pos_y+speed*timedelta*sin;
     }
     if(sf::Keyboard::isKeyPressed(sf::Keyboard::W)) {
-        pos_y = pos_y-speed*timedelta*cos;
         pos_x = pos_x-speed*timedelta*sin;
+        pos_y = pos_y-speed*timedelta*cos;
     }
     else if(sf::Keyboard::isKeyPressed(sf::Keyboard::S)) {
-        pos_y = pos_y+speed*timedelta*cos;
         pos_x = pos_x+speed*timedelta*sin;
+        pos_y = pos_y+speed*timedelta*cos;
     }
 
     shape.setPosition(sf::Vector2f(pos_x, pos_y));

@@ -5,7 +5,9 @@
 #include <sstream>
 
 #include "player.cpp"
+#include "worldmap.cpp"
 #include "globals.cpp"
+
 
 int main()
 {
