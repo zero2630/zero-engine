@@ -27,6 +27,13 @@ int main()
     text.setCharacterSize(16);
     text.setFillColor(sf::Color::White);
 
+
+    size_t map_size_x = 5;
+    size_t map_size_y = 5;
+    WorldMap2D map(map_size_x, map_size_y);
+    map.load_from_file("map.txt");
+    map.set_tile_size(40, 40);
+
     while (window.isOpen())
     {
         sf::Event event;
@@ -49,6 +56,15 @@ int main()
 
         window.clear();
         window.draw(player.get_shape());
+
+        for (int i=0; i<map_size_y; i++) {
+            for(int j=0; j<map_size_x; j++) {
+                if(map.get_tile(j, i).get_type() == 1) {
+                    window.draw(map.get_tile(j, i).get_shape());
+                }
+            }
+        }
+
         window.draw(text);
         window.display();        
     }
