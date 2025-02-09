@@ -1,4 +1,4 @@
-#include "player.h"
+#include "player.hpp"
 
 Player2D::Player2D()
 {
@@ -6,7 +6,7 @@ Player2D::Player2D()
     pos_y = 0;
     rotation = 0;
     speed = 0;
-    size = 40.f;
+    size = 10.f;
 
     cos = 1.f;
     sin = 0.f;
@@ -25,7 +25,7 @@ Player2D::Player2D(float _pos_x, float _pos_y, float _rotaion)
     pos_y = _pos_y;
     rotation = _rotaion;
     speed = 0;
-    size = 40.f;
+    size = 10.f;
 
     cos = 1.f;
     sin = 0.f;

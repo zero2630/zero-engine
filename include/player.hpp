@@ -4,7 +4,7 @@
 #include<vector>
 #include<cmath>
 
-#include"globals.h"
+#include"globals.hpp"
 
 
 class Player2D

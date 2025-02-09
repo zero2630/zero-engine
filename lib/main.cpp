@@ -4,14 +4,15 @@
 #include <iomanip>
 #include <sstream>
 
-#include "player.cpp"
-#include "worldmap.cpp"
-#include "globals.cpp"
+#include "player.hpp"
+#include "worldmap.hpp"
+#include "globals.hpp"
 
 
 int main()
 {
     sf::RenderWindow window(sf::VideoMode(1200, 800), "level");
+    window.setFramerateLimit(60);
 
     Player2D player(600, 400, 0);
     player.set_speed(100.f);
@@ -32,7 +33,7 @@ int main()
     size_t map_size_y = 5;
     WorldMap2D map(map_size_x, map_size_y);
     map.load_from_file("map.txt");
-    map.set_tile_size(40, 40);
+    map.set_tile_size(TILE_SIZE);
 
     while (window.isOpen())
     {

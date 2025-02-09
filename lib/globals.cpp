@@ -1,4 +1,4 @@
-#include "globals.h"
+#include "globals.hpp"
 
 float to_radians(float degrees)
 {
