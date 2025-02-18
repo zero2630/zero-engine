@@ -29,9 +29,7 @@ int main()
     text.setFillColor(sf::Color::White);
 
 
-    size_t map_size_x = 5;
-    size_t map_size_y = 5;
-    WorldMap2D map(map_size_x, map_size_y);
+    WorldMap2D map(MAP_SIZE, MAP_SIZE);
     map.load_from_file("map.txt");
     map.set_tile_size(TILE_SIZE);
 
@@ -49,6 +47,7 @@ int main()
 
         player.move(timedelta);
         player.rotate(timedelta);
+        player.render2D(map);
 
         str_converter << std::fixed  << "rotation: " << std::setprecision(2) << player.get_rotation();
         text.setString(str_converter.str());
@@ -56,14 +55,19 @@ int main()
 
 
         window.clear();
-        window.draw(player.get_shape());
 
-        for (int i=0; i<map_size_y; i++) {
-            for(int j=0; j<map_size_x; j++) {
+        for (int i=0; i<MAP_SIZE; i++) {
+            for(int j=0; j<MAP_SIZE; j++) {
                 if(map.get_tile(j, i).get_type() == 1) {
                     window.draw(map.get_tile(j, i).get_shape());
                 }
             }
+        }
+
+        std::vector<sf::VertexArray> temp_rays = player.get_rays();
+        window.draw(player.get_shape());
+        for(int i=0; i<temp_rays.size(); i++) {
+            window.draw(temp_rays[i]);
         }
 
         window.draw(text);
