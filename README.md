@@ -22,12 +22,12 @@ make editor-run
 ```
 
 ## Управление
-WASD - движение
-LeftArrow/RightArrow - поворот камеры
+WASD - движение<br>
+LeftArrow/RightArrow - поворот камеры<br>
 R - смена режима отображения
 
 
 ## Редактор карты
-lclick - создать тайл
-rclick - удалить тайл
+lclick - создать тайл<br>
+rclick - удалить тайл<br>
 Enter - сохранить карту
