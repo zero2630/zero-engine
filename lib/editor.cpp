@@ -10,7 +10,7 @@
 
 int main()
 {
-    sf::RenderWindow window(sf::VideoMode(1200, 800), "level");
+    sf::RenderWindow window(sf::VideoMode(WIDTH, HEIGHT), "level");
     window.setFramerateLimit(60);
 
     sf::Clock clock;
@@ -29,7 +29,7 @@ int main()
     text.setCharacterSize(16);
     text.setFillColor(sf::Color::White);
 
-    Player2D player(600, 400, 0);
+    Player2D player(700.f, 600.f, 0);
     player.set_speed(100.f);
 
 
